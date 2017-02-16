@@ -1,0 +1,30 @@
+
+package org.usfirst.frc4692.Bastion.commands;
+import org.usfirst.frc4692.Bastion.Robot;
+
+import edu.wpi.first.wpilibj.command.Command;
+
+public class Flip extends Command {
+	
+
+    public Flip() {
+        requires(Robot.toggle);
+    }
+
+    protected void initialize() {
+    	Robot.toggle.Extend();
+    }
+    protected void execute() {
+    	Robot.toggle.Extend();
+    	
+    }
+    protected boolean isFinished() {
+        return false;
+    }
+    protected void end() {
+    	Robot.toggle.Stop();
+    }
+
+    protected void interrupted() {
+    }
+}

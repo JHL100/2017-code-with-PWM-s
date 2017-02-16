@@ -1,0 +1,24 @@
+
+package org.usfirst.frc4692.Bastion.commands;
+import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc4692.Bastion.Robot;
+
+public class bucketextend extends Command {
+    public bucketextend() {
+        requires(Robot.ballslide);
+    }
+    protected void initialize() {
+    	Robot.ballslide.Extend();
+    }
+    protected void execute() {
+    	Robot.ballslide.Extend();
+    }
+    protected boolean isFinished() {
+        return false;
+    }
+    protected void end() {
+    	Robot.ballslide.Stop();
+    }
+    protected void interrupted() {
+    }
+}

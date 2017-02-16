@@ -1,0 +1,44 @@
+
+package org.usfirst.frc4692.Bastion.subsystems;
+
+import org.usfirst.frc4692.Bastion.RobotMap;
+import org.usfirst.frc4692.Bastion.commands.*;
+import com.ctre.CANTalon;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.RobotDrive;
+
+import edu.wpi.first.wpilibj.command.Subsystem;
+
+public class quaddrivetrain extends Subsystem {
+
+
+    private final CANTalon leftfront = RobotMap.quaddrivetrainleftfront;
+    private final CANTalon leftback = RobotMap.quaddrivetrainleftback;
+    private final CANTalon rightfront = RobotMap.quaddrivetrainrightfront;
+    private final CANTalon rightback = RobotMap.quaddrivetrainrightback;
+    private final RobotDrive quaddrive = RobotMap.quaddrivetrainquaddrive;
+
+    public void initDefaultCommand() {
+
+    setDefaultCommand(new wheeldrive());
+    }
+    
+    public void takeJoystickInputs(Joystick joystick1,Joystick joystick2){
+    	quaddrive.tankDrive(joystick1,joystick2);
+    }
+    	public void driveStraight(double d) {
+        	quaddrive.setLeftRightMotorOutputs(3.0,3.0);
+    }
+        	public void driveforward() {
+        		quaddrive.setLeftRightMotorOutputs(3.0, 3.0);
+
+
+	}
+
+			public void stop() {
+				quaddrive.tankDrive(0, 0);
+				
+			}
+}
+

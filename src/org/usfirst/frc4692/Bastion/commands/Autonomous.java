@@ -1,0 +1,21 @@
+
+package org.usfirst.frc4692.Bastion.commands;
+
+import edu.wpi.first.wpilibj.command.CommandGroup;
+
+public class Autonomous extends CommandGroup {
+    public Autonomous() {
+    	
+    	addSequential(new driveforward());
+    	addSequential(new SlideExtend());
+        // e.g. addSequential(new Command1());
+        //      addSequential(new Command2());
+        // these will run in order.
+
+        // To run multiple commands at the same time,
+        // use addParallel()
+        // e.g. addParallel(new Command1());
+        //      addSequential(new Command2());
+        // Command1 and Command2 will run in parallel.
+    }
+}
